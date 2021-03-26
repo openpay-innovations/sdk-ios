@@ -6,7 +6,7 @@ set -o pipefail
 WORKSPACE=${WORKSPACE:-.swiftpm/xcode/package.xcworkspace}
 SCHEME=${SCHEME:-Openpay}
 DESTINATION=${DESTINATION:-platform=iOS Simulator,name=iPhone 11,OS=latest}
-CONFIGURATION=${CONFIGURATION:-Release}
+CONFIGURATION=${CONFIGURATION:-Debug}
 
 echo 'Start to build swift package'
 

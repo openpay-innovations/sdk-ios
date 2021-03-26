@@ -39,8 +39,6 @@ jobs:
 
       - name: Build and Test SDK Project
         run: "Support/Scripts/CI/build-test-sdk.sh"
-        env:
-          CONFIGURATION: Debug
 
       - name: Build Example Project
         run: "Support/Scripts/CI/build-example.sh"
