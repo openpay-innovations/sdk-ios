@@ -351,7 +351,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n$SRCROOT/../Scripts/example-project-swiftlint\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n$SRCROOT/../Support/Scripts/BuildPhase/example-project-swiftlint\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

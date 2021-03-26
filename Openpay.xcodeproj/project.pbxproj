@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		FA11664825EDDC1D002486A2 /* WebCheckoutResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA17C05725DB6A2300FF29B1 /* WebCheckoutResult.swift */; };
 		FA1649AF25D235D10088EBCF /* Openpay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1649AE25D235D10088EBCF /* Openpay.swift */; };
-		FA17C05825DB6A2300FF29B1 /* WebCheckoutResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA17C05725DB6A2300FF29B1 /* WebCheckoutResult.swift */; };
 		FA24C09225E878AE0050C508 /* OpenpayPaymentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24C09125E878AE0050C508 /* OpenpayPaymentButton.swift */; };
 		FA2C2B482603569F006FA4A1 /* UIColor+Openpay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C2B472603569F006FA4A1 /* UIColor+Openpay.swift */; };
 		FA2C2B56260407E1006FA4A1 /* OpenpayBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C2B55260407E1006FA4A1 /* OpenpayBadge.swift */; };
@@ -351,7 +350,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$SRCROOT/Scripts/sdk-project-swiftlint\"\n";
+			shellScript = "\"$SRCROOT/Support/Scripts/BuildPhase/sdk-project-swiftlint\"\n";
 		};
 		FA2429E225D254A700DA01A9 /* Ensure No Customized Build Settings */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -369,7 +368,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$SRCROOT\"/Scripts/validate-build-settings \"${PROJECT_FILE_PATH}\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$SRCROOT\"/Support/Scripts/BuildPhase/validate-build-settings \"${PROJECT_FILE_PATH}\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -389,7 +388,6 @@
 				FA48681425EC9CA200CFAF0A /* WebCheckoutView.swift in Sources */,
 				FA5D2EDC25EF244900B1878B /* Strings.swift in Sources */,
 				FA4867F625EC6AA300CFAF0A /* UIImage+Openpay.swift in Sources */,
-				FA17C05825DB6A2300FF29B1 /* WebCheckoutResult.swift in Sources */,
 				FAEB37F825D39B7B00B7ACDC /* WebCheckoutViewController.swift in Sources */,
 				FA24C09225E878AE0050C508 /* OpenpayPaymentButton.swift in Sources */,
 			);
