@@ -1,0 +1,60 @@
+name: Build and Test
+
+env:
+  sdk-scheme: Openpay
+  example-scheme: Example
+  workspace: Openpay.xcworkspace
+  DEVELOPER_DIR: /Applications/Xcode_12.app/Contents/Developer
+  destination: platform=iOS Simulator,name=iPhone 11,OS=latest
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-test:
+    name: Build and Test
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cache Mint Packages
+        uses: actions/cache@v2
+        with:
+          path: /usr/local/lib/mint
+          key: ${{ runner.os }}-mint-${{ hashFiles('Mintfile') }}
+          restore-keys: |
+            ${{ runner.os }}-mint-
+      
+      - name: Install Swift Command Line Tool Packages
+        run: Tools/mint/mint bootstrap
+
+      - name: Run SwiftLint on SDK and Example Project
+        run: Tools/mint/mint run swiftlint --reporter github-actions-logging
+
+      - name: Build and Test SDK Project
+        run: "Support/Scripts/CI/build-test-sdk.sh"
+        env:
+          CONFIGURATION: Debug
+
+      - name: Build Example Project
+        run: "Support/Scripts/CI/build-example.sh"
+
+  validate-integration:
+    name: Validate Integration
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Validate Swift Package
+      run: "Support/Scripts/CI/validate-swift-package.sh"
+
+
