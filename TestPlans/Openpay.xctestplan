@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "86AD6294-BDBC-4485-9D95-BE5BA73B22B7",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : false
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Openpay.xcodeproj",
+        "identifier" : "FAB6291525D1F07D0066288E",
+        "name" : "OpenpayTests"
+      }
+    }
+  ],
+  "version" : 1
+}
