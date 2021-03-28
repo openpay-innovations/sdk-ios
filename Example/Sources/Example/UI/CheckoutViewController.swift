@@ -7,7 +7,7 @@
 //
 
 import Openpay
-import OSLog
+import os.log
 import UIKit
 
 final class CheckoutViewController: UIViewController {
