@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import OSLog
+import os.log
 
 extension OSLog {
     static let general = OSLog(subsystem: "com.openpay.Example", category: "General")
