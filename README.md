@@ -194,7 +194,7 @@ The transaction token and the base handover URL are generated via the `/orders` 
 ## Openpay Payment Button
 The Openpay SDK provides several payment buttons you can use to allow people to make payments with Openpay. The button styles below are available in the SDK.
 
-For more details about the payment button see [SDK Styleguide](https://xd.adobe.com/view/162312e4-d288-46ce-89f2-60dc5d66221c-4370/specs/).
+For more details about the payment button see [SDK Styleguide](Support/Images/styleguide.pdf).
 
 ### Amber with Granite Grey
 
@@ -229,7 +229,7 @@ let checkoutButton = OpenpayPaymentButton(theme: .dynamic(light: .graniteOnAmber
 ## Openpay Badge
 The Openpay SDK provides four different color schemes for the badge view. The following button styles are available in the SDK.
 
-For more details about the badge see [SDK Styleguide](https://xd.adobe.com/view/162312e4-d288-46ce-89f2-60dc5d66221c-4370/specs/).
+For more details about the badge see [SDK Styleguide](Support/Images/styleguide.pdf).
 
 ### Amber with Granite Grey
 | Granite on Amber | Amber on Granite | Minimum Width |
