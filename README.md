@@ -53,7 +53,7 @@ Follow the steps below to add the Openpay SDK as a [git submodule](https://git-s
 That's all you need to import the Openpay SDK and you can now build it on the device and simulator.
 
 ## Examples
-The [example project]() sets an example of how the payment flow works with the web checkout.
+The [example project](https://github.com/openpay-innovations/sdk-ios/tree/main/Example) sets an example of how the payment flow works with the web checkout.
 Check out the example project under `Openpay.xcworkspace`.
 
 ## Building
@@ -62,7 +62,7 @@ Check out the example project under `Openpay.xcworkspace`.
 
 You can simply build the SDK project with Cmd + B or run the [Scripts/bootstrap-tools] script to install all the Swift command line tool packages before the first build to speed up the build time.
 
-You do not need to install mint manually as an extra step because a pre-compiled Mint executable file is included under the directory [Tools/mint]().
+You do not need to install mint manually as an extra step because a pre-compiled Mint executable file is included under the directory [Tools/mint](https://github.com/openpay-innovations/sdk-ios/tree/main/Tools/mint).
 
 ## Features
 ### Web Checkout View
