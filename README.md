@@ -1,4 +1,8 @@
 # Openpay iOS SDK
+![Build and Test](https://github.com/openpay-innovations/sdk-ios/actions/workflows/build-test.yml/badge.svg)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
+
 
 The Openpay SDK for iOS allows you to integrate Openpay with ease. It provides a framework and documentation for developers to enable payments for customers.
 
