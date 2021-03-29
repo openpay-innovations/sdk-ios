@@ -1,0 +1,27 @@
+/*
+  Localizable.strings
+  Openpay
+
+  Created by june chen on 3/3/21.
+  Copyright © 2021 Openpay. All rights reserved.
+*/
+
+// MARK: - Common Error Messages
+"errorTitle" = "Error";
+
+// MARK: - Common Action Titles
+"actionRetry" = "Retry";
+"actionCancel" = "Cancel";
+"actionYes" = "Yes";
+"actionNo" = "No";
+
+// MARK: - Checkout
+"loadCheckoutViewFailedMessage" = "Failed to load Openpay checkout view";
+"dismissCheckoutViewConfirmationTitle" = "Are you sure you want to cancel the payment?";
+
+// MARK: - Development Error Messages
+"fatalErrorInitCoderNotImplemented" = "init(coder:) has not been implemented";
+
+// MARK: - Accessibility
+"paymentButtonAccessibilityLabel" = "pay with openpay";
+"badgeAccessibilityLabel" = "openpay badge";
