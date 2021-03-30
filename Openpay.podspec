@@ -6,7 +6,7 @@ Pod::Spec.new do |spec|
     The Openpay iOS SDK provides drop in UI Components for a smooth Openpay integration.
   DESC
   spec.homepage      = "https://github.com/openpay-innovations/sdk-ios"
-  spec.license       = "Apache License, Version 2.0"
+  spec.license       = { :type => 'Apache License, Version 2.0', :file => 'LICENSE' }
   spec.author        = "Openpay"
   spec.platform      = :ios, "13.0"
   spec.ios.deployment_target  = "13.0"
