@@ -55,4 +55,7 @@ jobs:
     - name: Validate Swift Package
       run: "Support/Scripts/CI/validate-swift-package.sh"
 
+    - name: Validate Cocoapods
+      run: "Support/Scripts/CI/validate-cocoapods.sh"
+
 
