@@ -48,22 +48,34 @@ The Openpay SDK for iOS allows you to integrate Openpay with ease. It provides a
 ### CocoaPods
 [CocoaPods](https://cocoapods.org) is a dependency manager for Swift and Objective-C Cocoa projects. For installation and usage instructions, please visit their website for details. To integrate the Openpay SDK into your Xcode project using CocoaPods, add it to your `Podfile`:
 ```
-pod 'openpay', '~> 1.0'
+pod 'openpay', '~> 0.1.0'
 ```
 
 ### Carthage
 [Carthage](https://github.com/Carthage/Carthage) is a dependency manager that builds your dependencies to provide you with binary frameworks. To integrate the Openpay SDK into your Xcode project using Carthage, add it to your `Cartfile`:
 ```
-github "openpay-innovations/sdk-ios" ~> 1.0
+github "openpay-innovations/sdk-ios" ~> 0.1.0
 ```
 
 ### Swift Package Manager
-The [Swift Package Manager](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. To integrate Openpay SDK into your Xcode project using SPM, add it to your `Package.swift`:
+The [Swift Package Manager](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code. 
+
+---
+**NOTE**
+
+When you add the SDK from Xcode -> File -> Swift Packages -> Add Package Dependency and select the version you want, Xcode will automatically suggest the current version `Up to Next Major`. 
+
+We strongly suggest that while the iOS Openpay SDK is on a `0.x.y` version scheme, you should select `Up to Next Minor`, because we will still be releasing breaking changes on minor versions.
+
+---
+
+To integrate Openpay SDK into your Xcode project using SPM, add it to your `Package.swift`:
 ```
 dependencies: [
-    .package(url: "https://github.com/openpay-innovations/sdk-ios.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/openpay-innovations/sdk-ios.git", .upToNextMinor(from: "0.1.0"))
 ]
 ```
+
 
 ### Manually
 
