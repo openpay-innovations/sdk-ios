@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name          = "Openpay"
-  spec.version       = ENV['LIB_VERSION'] || '1.0.0' # fallback to major version
+  spec.version       = ENV['LIB_VERSION'] || '0.1.0'
   spec.summary       = "Openpay iOS SDK"
   spec.description   = <<-DESC
     The Openpay iOS SDK provides drop in UI Components for a smooth Openpay integration.
