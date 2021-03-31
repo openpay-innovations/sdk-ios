@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   spec.author        = "Openpay"
   spec.platform      = :ios, "13.0"
   spec.ios.deployment_target  = "13.0"
-  spec.source        = { :git => "https://github.com/openpay-innovations/sdk-ios", :tag => "#{spec.version}" }
+  spec.source        = { :git => "https://github.com/openpay-innovations/sdk-ios.git", :tag => "#{spec.version}" }
   spec.source_files  = "Sources/Openpay/**/*.swift"
   spec.swift_version = "5.3"
   spec.framework     = "UIKit"
