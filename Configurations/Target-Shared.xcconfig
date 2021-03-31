@@ -165,4 +165,13 @@ SWIFT_VERSION = 5.0
 
 TARGETED_DEVICE_FAMILY = 1,2
 
+// Built for Distribution
+
 BUILD_LIBRARY_FOR_DISTRIBUTION = YES
+
+// Marketing Version
+//
+// This setting defines the user-visible version of the project. The value corresponds to
+// the `CFBundleShortVersionString` key in your app's Info.plist.
+
+MARKETING_VERSION = 0.1.0
