@@ -48,7 +48,7 @@ The Openpay SDK for iOS allows you to integrate Openpay with ease. It provides a
 ### CocoaPods
 [CocoaPods](https://cocoapods.org) is a dependency manager for Swift and Objective-C Cocoa projects. For installation and usage instructions, please visit their website for details. To integrate the Openpay SDK into your Xcode project using CocoaPods, add it to your `Podfile`:
 ```
-pod 'openpay', '~> 0.1.0'
+pod 'Openpay', '~> 0.1.0'
 ```
 
 ### Carthage
