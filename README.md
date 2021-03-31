@@ -1,5 +1,8 @@
 # Openpay iOS SDK
 ![Build and Test](https://github.com/openpay-innovations/sdk-ios/actions/workflows/build-test.yml/badge.svg)
+[![Swift Package Manager Compatible](https://img.shields.io/badge/SPM-compatible-4BC51D.svg?style=flat)](https://github.com/apple/swift-package-manager)
+[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Openpay)](https://cocoapods.org/pods/Openpay)
 ![License](https://img.shields.io/github/license/openpay-innovations/sdk-ios)
 ![Forks](	https://img.shields.io/github/forks/openpay-innovations/sdk-ios)
 
