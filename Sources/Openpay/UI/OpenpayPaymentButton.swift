@@ -97,6 +97,8 @@ public final class OpenpayPaymentButton: UIButton {
         accessibilityLabel = Strings.paymentButtonAccessibilityLabel
 
         updateButtonImage()
+
+        Openpay.addObserver(self)
     }
 
     override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -107,5 +109,17 @@ public final class OpenpayPaymentButton: UIButton {
     private func updateButtonImage() {
         setBackgroundImage(buttonImage.backgroundImage, for: .normal)
         setImage(buttonImage.logo, for: .normal)
+    }
+
+    deinit {
+        Openpay.removeObserver(self)
+    }
+}
+
+extension OpenpayPaymentButton: OpenpayConfigObserver {
+    public func localeDidChange() {
+        DispatchQueue.main.async {
+            self.updateButtonImage()
+        }
     }
 }
