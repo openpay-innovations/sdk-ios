@@ -21,6 +21,7 @@
 		FA5D2EDC25EF244900B1878B /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D2EDB25EF244900B1878B /* Strings.swift */; };
 		FA5D2EE525EF26CA00B1878B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA5D2EE425EF26CA00B1878B /* Assets.xcassets */; };
 		FA6A17FF261D662500B8492C /* OpenpayConfigObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A17FE261D662500B8492C /* OpenpayConfigObserver.swift */; };
+		FA6A1809261D7C0600B8492C /* ObservationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6A1808261D7C0600B8492C /* ObservationTests.swift */; };
 		FA99C60E25EF2C4300528124 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA99C60C25EF2C4300528124 /* Localizable.strings */; };
 		FA99C62025EF32CA00528124 /* OPBundleLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA99C61F25EF32CA00528124 /* OPBundleLocator.swift */; };
 		FAA6BA3A25FF3EBC00014B0C /* OpenpayTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA6BA3925FF3EBC00014B0C /* OpenpayTheme.swift */; };
@@ -62,6 +63,7 @@
 		FA5D2EDB25EF244900B1878B /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		FA5D2EE425EF26CA00B1878B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA6A17FE261D662500B8492C /* OpenpayConfigObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenpayConfigObserver.swift; sourceTree = "<group>"; };
+		FA6A1808261D7C0600B8492C /* ObservationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationTests.swift; sourceTree = "<group>"; };
 		FA99C60D25EF2C4300528124 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FA99C61F25EF32CA00528124 /* OPBundleLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OPBundleLocator.swift; sourceTree = "<group>"; };
 		FAA6BA3925FF3EBC00014B0C /* OpenpayTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenpayTheme.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				FAB6291D25D1F07D0066288E /* Info.plist */,
 				FA2C2B6C26043522006FA4A1 /* OpenpayThemeTests.swift */,
+				FA6A1808261D7C0600B8492C /* ObservationTests.swift */,
 			);
 			path = OpenpayTests;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6A1809261D7C0600B8492C /* ObservationTests.swift in Sources */,
 				FA2C2B6D26043522006FA4A1 /* OpenpayThemeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
