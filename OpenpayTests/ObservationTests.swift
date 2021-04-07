@@ -12,14 +12,14 @@ import XCTest
 class ObservationTests: XCTestCase {
 
     class Observer: OpenpayConfigObserver {
-        var previousLocale: OpenpayLocale?
+        var previousBranding: OpenpayBranding?
 
         init() {
             Openpay.addObserver(self)
         }
 
-        func localeDidChange(_ previousLocale: OpenpayLocale) {
-            self.previousLocale = previousLocale
+        func brandingDidChange(_ previousBranding: OpenpayBranding) {
+            self.previousBranding = previousBranding
         }
     }
 
@@ -30,13 +30,13 @@ class ObservationTests: XCTestCase {
         observer = Observer()
     }
 
-    func test_localeDidChange() throws {
-        XCTAssertNil(observer.previousLocale)
+    func test_brandingDidChange() throws {
+        XCTAssertNil(observer.previousBranding)
 
-        Openpay.setLocale(.australia)
-        XCTAssertEqual(observer.previousLocale, .australia)
+        Openpay.setBranding(.australia)
+        XCTAssertEqual(observer.previousBranding, .australia)
 
-        Openpay.setLocale(.unitedStates)
-        XCTAssertEqual(observer.previousLocale, .australia)
+        Openpay.setBranding(.unitedStates)
+        XCTAssertEqual(observer.previousBranding, .australia)
     }
 }

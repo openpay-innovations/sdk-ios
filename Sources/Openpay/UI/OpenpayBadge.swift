@@ -32,7 +32,7 @@ public final class OpenpayBadge: UIView {
     private var aspectRatioConstraint: NSLayoutConstraint!
 
     private var badgeImage: BadgeImage {
-        switch (colorScheme, locale) {
+        switch (colorScheme, branding) {
         case (.graniteOnAmber, .unitedStates):
             return BadgeImage(image: UIImage.opImage("badge_opy_graniteOnAmber"), minimumWidth: 40)
         case (.graniteOnAmber, _):
@@ -125,7 +125,7 @@ public final class OpenpayBadge: UIView {
 }
 
 extension OpenpayBadge: OpenpayConfigObserver {
-    public func localeDidChange(_ previousLocale: OpenpayLocale) {
+    public func brandingDidChange(_ previousBranding: OpenpayBranding) {
         DispatchQueue.main.async {
             self.updateBadgeView(self.badgeImage)
         }

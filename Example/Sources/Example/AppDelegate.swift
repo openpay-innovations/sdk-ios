@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // SceneDelegate is being used for iOS 13+
 
-        Openpay.setLocale(.australia)
+        Openpay.setBranding(.australia)
         return true
     }
 }

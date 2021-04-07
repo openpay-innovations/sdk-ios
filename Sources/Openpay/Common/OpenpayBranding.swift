@@ -1,5 +1,5 @@
 //
-//  OpenpayLocale.swift
+//  OpenpayBranding.swift
 //  Openpay
 //
 //  Created by june chen on 6/4/21.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum OpenpayLocale {
+public enum OpenpayBranding {
     case australia
     case greatBritain
     case unitedStates

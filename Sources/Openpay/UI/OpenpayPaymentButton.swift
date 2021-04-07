@@ -19,7 +19,7 @@ public final class OpenpayPaymentButton: UIButton {
     }
 
     private var logoImage: UIImage {
-        switch locale {
+        switch branding {
         case .australia, .greatBritain:
             return UIImage.opImage("payWithOpenpay_logo")
         case .unitedStates:
@@ -113,7 +113,7 @@ public final class OpenpayPaymentButton: UIButton {
 }
 
 extension OpenpayPaymentButton: OpenpayConfigObserver {
-    public func localeDidChange(_ previousLocale: OpenpayLocale) {
+    public func brandingDidChange(_ previousBranding: OpenpayBranding) {
         DispatchQueue.main.async {
             self.updateButtonImage()
         }

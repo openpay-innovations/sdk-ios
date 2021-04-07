@@ -38,21 +38,21 @@ public func presentWebCheckoutView(
     viewController.present(checkoutVC, animated: animated, completion: nil)
 }
 
-// MARK: - Locale
-public private(set) var locale: OpenpayLocale = .australia {
+// MARK: - Branding
+public private(set) var branding: OpenpayBranding = .australia {
     didSet {
         for (id, observation) in observations {
             guard let observer = observation.observer else {
                 observations.removeValue(forKey: id)
                 continue
             }
-            observer.localeDidChange(oldValue)
+            observer.brandingDidChange(oldValue)
         }
     }
 }
 
-public func setLocale(_ locale: OpenpayLocale) {
-    Openpay.locale = locale
+public func setBranding(_ branding: OpenpayBranding) {
+    Openpay.branding = branding
 }
 
 // MARK: - Configuration Observation
