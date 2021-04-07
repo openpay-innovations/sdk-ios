@@ -98,9 +98,10 @@ final class SummaryView: UIView {
 
         let stackView = UIStackView(arrangedSubviews: [openpayBadge, amountLabel])
         stackView.axis = .horizontal
-        stackView.alignment = .center
-        stackView.distribution = .equalCentering
+        stackView.spacing = 8.0
         stackView.translatesAutoresizingMaskIntoConstraints = false
+
+        amountLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
 
         addSubview(stackView)
 
