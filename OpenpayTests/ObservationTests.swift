@@ -32,11 +32,9 @@ class ObservationTests: XCTestCase {
 
     func test_brandingDidChange() throws {
         XCTAssertNil(observer.previousBranding)
-
-        Openpay.setBranding(.australia)
-        XCTAssertEqual(observer.previousBranding, .australia)
-
-        Openpay.setBranding(.unitedStates)
-        XCTAssertEqual(observer.previousBranding, .australia)
+        Openpay.setBranding(.openpay)
+        Openpay.setBranding(.opy)
+        XCTAssertEqual(observer.previousBranding, .openpay)
+        XCTAssertEqual(Openpay.branding, .opy)
     }
 }
