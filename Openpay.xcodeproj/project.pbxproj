@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		FA11664825EDDC1D002486A2 /* WebCheckoutResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA17C05725DB6A2300FF29B1 /* WebCheckoutResult.swift */; };
 		FA1649AF25D235D10088EBCF /* Openpay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1649AE25D235D10088EBCF /* Openpay.swift */; };
+		FA1C649B261C33D0001F976A /* OpenpayLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C649A261C33D0001F976A /* OpenpayLocale.swift */; };
 		FA24C09225E878AE0050C508 /* OpenpayPaymentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA24C09125E878AE0050C508 /* OpenpayPaymentButton.swift */; };
 		FA2C2B482603569F006FA4A1 /* UIColor+Openpay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C2B472603569F006FA4A1 /* UIColor+Openpay.swift */; };
 		FA2C2B56260407E1006FA4A1 /* OpenpayBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2C2B55260407E1006FA4A1 /* OpenpayBadge.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		FA1649AE25D235D10088EBCF /* Openpay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Openpay.swift; sourceTree = "<group>"; };
 		FA17C05725DB6A2300FF29B1 /* WebCheckoutResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebCheckoutResult.swift; sourceTree = "<group>"; };
+		FA1C649A261C33D0001F976A /* OpenpayLocale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenpayLocale.swift; sourceTree = "<group>"; };
 		FA2429C025D2520D00DA01A9 /* Target-Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Target-Debug.xcconfig"; sourceTree = "<group>"; };
 		FA2429C125D2520D00DA01A9 /* TestsTarget-Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "TestsTarget-Release.xcconfig"; sourceTree = "<group>"; };
 		FA2429C225D2520D00DA01A9 /* Target-Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "Target-Release.xcconfig"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				FA5D2EDB25EF244900B1878B /* Strings.swift */,
 				FA99C61F25EF32CA00528124 /* OPBundleLocator.swift */,
 				FA2C2B472603569F006FA4A1 /* UIColor+Openpay.swift */,
+				FA1C649A261C33D0001F976A /* OpenpayLocale.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				FA44CE0825EF10B800908D1C /* View+WebCheckout.swift in Sources */,
 				FA48681425EC9CA200CFAF0A /* WebCheckoutView.swift in Sources */,
 				FA5D2EDC25EF244900B1878B /* Strings.swift in Sources */,
+				FA1C649B261C33D0001F976A /* OpenpayLocale.swift in Sources */,
 				FA4867F625EC6AA300CFAF0A /* UIImage+Openpay.swift in Sources */,
 				FAEB37F825D39B7B00B7ACDC /* WebCheckoutViewController.swift in Sources */,
 				FA24C09225E878AE0050C508 /* OpenpayPaymentButton.swift in Sources */,

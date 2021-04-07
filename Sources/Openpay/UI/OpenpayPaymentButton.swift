@@ -18,7 +18,15 @@ public final class OpenpayPaymentButton: UIButton {
         case graniteOnWhite
     }
 
-    private let logoImage = UIImage.opImage("payment_button_logo")
+    private var logoImage: UIImage {
+        switch locale {
+        case .australia, .greatBritain:
+            return UIImage.opImage("payWithOpenpay_logo")
+        case .unitedStates:
+            return UIImage.opImage("payWithOPY_logo")
+        }
+    }
+
     private let minimumWidth: CGFloat = 218
     private let maximumWidth: CGFloat = 380
     private let minimumHeight: CGFloat = 48
