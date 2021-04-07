@@ -100,6 +100,8 @@ public final class OpenpayBadge: UIView {
         ])
 
         configAccessibility()
+
+        Openpay.addObserver(self)
     }
 
     override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -119,5 +121,17 @@ public final class OpenpayBadge: UIView {
         accessibilityTraits = [.image]
         isAccessibilityElement = true
         accessibilityLabel = Strings.badgeAccessibilityLabel
+    }
+
+    deinit {
+        Openpay.removeObserver(self)
+    }
+}
+
+extension OpenpayBadge: OpenpayConfigObserver {
+    public func localeDidChange() {
+        DispatchQueue.main.async {
+            self.updateBadgeView(self.badgeImage)
+        }
     }
 }
