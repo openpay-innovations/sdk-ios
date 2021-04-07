@@ -122,14 +122,10 @@ public final class OpenpayBadge: UIView {
         isAccessibilityElement = true
         accessibilityLabel = Strings.badgeAccessibilityLabel
     }
-
-    deinit {
-        Openpay.removeObserver(self)
-    }
 }
 
 extension OpenpayBadge: OpenpayConfigObserver {
-    public func localeDidChange() {
+    public func localeDidChange(_ previousLocale: OpenpayLocale) {
         DispatchQueue.main.async {
             self.updateBadgeView(self.badgeImage)
         }

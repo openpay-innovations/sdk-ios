@@ -46,7 +46,7 @@ public private(set) var locale: OpenpayLocale = .australia {
                 observations.removeValue(forKey: id)
                 continue
             }
-            observer.localeDidChange()
+            observer.localeDidChange(oldValue)
         }
     }
 }

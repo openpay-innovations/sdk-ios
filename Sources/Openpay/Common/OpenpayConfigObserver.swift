@@ -9,9 +9,9 @@
 import Foundation
 
 public protocol OpenpayConfigObserver: AnyObject {
-    func localeDidChange()
+    func localeDidChange(_ previousLocale: OpenpayLocale)
 }
 
 public extension OpenpayConfigObserver {
-    func localeDidChange() {}
+    func localeDidChange(_ previousLocale: OpenpayLocale) {}
 }

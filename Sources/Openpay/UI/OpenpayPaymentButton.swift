@@ -110,14 +110,10 @@ public final class OpenpayPaymentButton: UIButton {
         setBackgroundImage(buttonImage.backgroundImage, for: .normal)
         setImage(buttonImage.logo, for: .normal)
     }
-
-    deinit {
-        Openpay.removeObserver(self)
-    }
 }
 
 extension OpenpayPaymentButton: OpenpayConfigObserver {
-    public func localeDidChange() {
+    public func localeDidChange(_ previousLocale: OpenpayLocale) {
         DispatchQueue.main.async {
             self.updateButtonImage()
         }
