@@ -8,8 +8,13 @@
 
 import Foundation
 
+/// Keys that specify an Openpay branding which affects the style of the payment button and badges.
+@frozen
 public enum OpenpayBranding {
-    case australia
-    case greatBritain
-    case unitedStates
+    // An AU or UK merchant should set the SDK branding to `openpay`
+    // For more details about the `openpay` branding style see: /Support/Images/styleguide_openpay.pdf
+    case openpay
+    // A US merchant should set the SDK branding to `opy`
+    // For more details about the `opy` branding style see: /Support/Images/styleguide_opy.pdf
+    case opy
 }

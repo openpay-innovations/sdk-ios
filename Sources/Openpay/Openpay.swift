@@ -39,7 +39,8 @@ public func presentWebCheckoutView(
 }
 
 // MARK: - Branding
-public private(set) var branding: OpenpayBranding = .australia {
+/// A read-only property that reflects the SDK branding.
+public private(set) var branding: OpenpayBranding = .openpay {
     didSet {
         for (id, observation) in observations {
             guard let observer = observation.observer else {
@@ -51,6 +52,8 @@ public private(set) var branding: OpenpayBranding = .australia {
     }
 }
 
+/// Sets the branding of the SDK.
+/// - Parameter branding: The Openpay branding to use for the SDK UI style.
 public func setBranding(_ branding: OpenpayBranding) {
     Openpay.branding = branding
 }
@@ -62,11 +65,15 @@ struct Observation {
 
 private var observations = [ObjectIdentifier: Observation]()
 
+/// Adds an object for observing changes to the Openpay configuration.
+/// - Parameter observer: An object to be added that conforms to the `OpenpayConfigObserver` protocol.
 public func addObserver(_ observer: OpenpayConfigObserver) {
     let id = ObjectIdentifier(observer)
     observations[id] = Observation(observer: observer)
 }
 
+/// Removes an object from observing changes to the Openpay configuration.
+/// - Parameter observer: An object to be removed that conforms to the `OpenpayConfigObserver` protocol.
 public func removeObserver(_ observer: OpenpayConfigObserver) {
     let id = ObjectIdentifier(observer)
     observations.removeValue(forKey: id)

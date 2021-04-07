@@ -20,9 +20,9 @@ public final class OpenpayPaymentButton: UIButton {
 
     private var logoImage: UIImage {
         switch branding {
-        case .australia, .greatBritain:
+        case .openpay:
             return UIImage.opImage("payWithOpenpay_logo")
-        case .unitedStates:
+        case .opy:
             return UIImage.opImage("payWithOPY_logo")
         }
     }

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// A type that can observe changes to the Openpay configurations such as branding.
 public protocol OpenpayConfigObserver: AnyObject {
     func brandingDidChange(_ previousBranding: OpenpayBranding)
 }

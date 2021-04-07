@@ -33,24 +33,24 @@ public final class OpenpayBadge: UIView {
 
     private var badgeImage: BadgeImage {
         switch (colorScheme, branding) {
-        case (.graniteOnAmber, .unitedStates):
-            return BadgeImage(image: UIImage.opImage("badge_opy_graniteOnAmber"), minimumWidth: 40)
-        case (.graniteOnAmber, _):
-            return BadgeImage(image: UIImage.opImage("badge_openpay_graniteOnAmber"), minimumWidth: 75)
-        case (.amberOnGranite, .unitedStates):
-            return BadgeImage(image: UIImage.opImage("badge_opy_amberOnGranite"), minimumWidth: 40)
-        case (.amberOnGranite, _):
-            return BadgeImage(image: UIImage.opImage("badge_openpay_amberOnGranite"), minimumWidth: 75)
-        case (.white, .unitedStates):
+        case (.graniteOnAmber, .opy):
+            return BadgeImage(image: .opImage("badge_opy_graniteOnAmber"), minimumWidth: 40)
+        case (.graniteOnAmber, .openpay):
+            return BadgeImage(image: .opImage("badge_openpay_graniteOnAmber"), minimumWidth: 75)
+        case (.amberOnGranite, .opy):
+            return BadgeImage(image: .opImage("badge_opy_amberOnGranite"), minimumWidth: 40)
+        case (.amberOnGranite, .openpay):
+            return BadgeImage(image: .opImage("badge_openpay_amberOnGranite"), minimumWidth: 75)
+        case (.white, .opy):
             let image = UIImage.opImage("badge_opy_logo").withTintColor(.white)
             return BadgeImage(image: image, minimumWidth: 34)
-        case (.white, _):
+        case (.white, .openpay):
             let image = UIImage.opImage("badge_openpay_logo").withTintColor(.white)
             return BadgeImage(image: image, minimumWidth: 80)
-        case (.granite, .unitedStates):
+        case (.granite, .opy):
             let image = UIImage.opImage("badge_opy_logo").withTintColor(.graniteGrey)
             return BadgeImage(image: image, minimumWidth: 34)
-        case (.granite, _):
+        case (.granite, .openpay):
             let image = UIImage.opImage("badge_openpay_logo").withTintColor(.graniteGrey)
             return BadgeImage(image: image, minimumWidth: 80)
         }
