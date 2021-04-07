@@ -104,8 +104,10 @@ final class SummaryView: UIView {
 
         addSubview(stackView)
 
+        let badgeWidth: CGFloat = Openpay.locale == .unitedStates ? 40 : 84
+
         NSLayoutConstraint.activate([
-            openpayBadge.widthAnchor.constraint(equalToConstant: 84),
+            openpayBadge.widthAnchor.constraint(equalToConstant: badgeWidth),
             stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
             stackView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 8),

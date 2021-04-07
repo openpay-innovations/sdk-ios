@@ -32,16 +32,26 @@ public final class OpenpayBadge: UIView {
     private var aspectRatioConstraint: NSLayoutConstraint!
 
     private var badgeImage: BadgeImage {
-        switch colorScheme {
-        case .graniteOnAmber:
-            return BadgeImage(image: UIImage.opImage("badge_graniteOnAmber"), minimumWidth: 75)
-        case .amberOnGranite:
-            return BadgeImage(image: UIImage.opImage("badge_amberOnGranite"), minimumWidth: 75)
-        case .white:
-            let image = UIImage.opImage("badge_logo").withTintColor(.white)
+        switch (colorScheme, locale) {
+        case (.graniteOnAmber, .unitedStates):
+            return BadgeImage(image: UIImage.opImage("badge_opy_graniteOnAmber"), minimumWidth: 40)
+        case (.graniteOnAmber, _):
+            return BadgeImage(image: UIImage.opImage("badge_openpay_graniteOnAmber"), minimumWidth: 75)
+        case (.amberOnGranite, .unitedStates):
+            return BadgeImage(image: UIImage.opImage("badge_opy_amberOnGranite"), minimumWidth: 40)
+        case (.amberOnGranite, _):
+            return BadgeImage(image: UIImage.opImage("badge_openpay_amberOnGranite"), minimumWidth: 75)
+        case (.white, .unitedStates):
+            let image = UIImage.opImage("badge_opy_logo").withTintColor(.white)
+            return BadgeImage(image: image, minimumWidth: 34)
+        case (.white, _):
+            let image = UIImage.opImage("badge_openpay_logo").withTintColor(.white)
             return BadgeImage(image: image, minimumWidth: 80)
-        case .granite:
-            let image = UIImage.opImage("badge_logo").withTintColor(.graniteGrey)
+        case (.granite, .unitedStates):
+            let image = UIImage.opImage("badge_opy_logo").withTintColor(.graniteGrey)
+            return BadgeImage(image: image, minimumWidth: 34)
+        case (.granite, _):
+            let image = UIImage.opImage("badge_openpay_logo").withTintColor(.graniteGrey)
             return BadgeImage(image: image, minimumWidth: 80)
         }
     }

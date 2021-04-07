@@ -6,8 +6,8 @@
 //  Created by june chen on 9/2/21.
 //
 
-import UIKit
 import Openpay
+import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

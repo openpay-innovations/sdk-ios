@@ -36,7 +36,7 @@ public func presentWebCheckoutView(
     viewController.present(checkoutVC, animated: animated, completion: nil)
 }
 
-private(set) var locale: OpenpayLocale = .australia
+public private(set) var locale: OpenpayLocale = .australia
 
 public func setLocale(_ locale: OpenpayLocale) {
     Openpay.locale = locale
