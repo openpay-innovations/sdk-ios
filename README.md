@@ -29,14 +29,24 @@ The Openpay SDK for iOS allows you to integrate Openpay with ease. It provides a
     - [Swift - UIKit](#swift---uikit)
     - [Objective-C](#objective-c)
     - [SwiftUI](#swiftui)
-  - [Openpay Payment Button](#openpay-payment-button)
-    - [Amber with Granite Grey](#amber-with-granite-grey)
-    - [Granite Grey with White](#granite-grey-with-white)
+  - [Openpay Branding](#openpay-branding)
     - [Example](#example)
-  - [Openpay Badge](#openpay-badge)
-    - [Amber with Granite Grey](#amber-with-granite-grey-1)
-    - [Light](#light)
+  - [Openpay Payment Button](#openpay-payment-button)
+    - [`openpay` Branding](#openpay-branding-1)
+      - [Amber with Granite Grey](#amber-with-granite-grey)
+      - [Granite Grey with White](#granite-grey-with-white)
+    - [`opy` Branding](#opy-branding)
+      - [Amber with Granite Grey](#amber-with-granite-grey-1)
+      - [Granite Grey with **White**](#granite-grey-with-white-1)
     - [Example](#example-1)
+  - [Openpay Badge](#openpay-badge)
+    - [`openpay` Branding](#openpay-branding-2)
+      - [Amber with Granite Grey](#amber-with-granite-grey-2)
+      - [Light](#light)
+    - [`opy` Branding](#opy-branding-1)
+      - [Amber with Granite Grey](#amber-with-granite-grey-3)
+      - [Light](#light-1)
+    - [Example](#example-2)
   - [Themes](#themes)
 - [Contributing](#contributing)
 - [License](#license)
@@ -52,13 +62,13 @@ The Openpay SDK for iOS allows you to integrate Openpay with ease. It provides a
 ### CocoaPods
 [CocoaPods](https://cocoapods.org) is a dependency manager for Swift and Objective-C Cocoa projects. For installation and usage instructions, please visit their website for details. To integrate the Openpay SDK into your Xcode project using CocoaPods, add it to your `Podfile`:
 ```
-pod 'Openpay', '~> 0.1.0'
+pod 'Openpay', '~> 0.2.0'
 ```
 
 ### Carthage
 [Carthage](https://github.com/Carthage/Carthage) is a dependency manager that builds your dependencies to provide you with binary frameworks. To integrate the Openpay SDK into your Xcode project using Carthage, add it to your `Cartfile`:
 ```
-github "openpay-innovations/sdk-ios" ~> 0.1.0
+github "openpay-innovations/sdk-ios" ~> 0.2.0
 ```
 
 ### Swift Package Manager
@@ -76,7 +86,7 @@ We strongly suggest that while the iOS Openpay SDK is on a `0.x.y` version schem
 To integrate Openpay SDK into your Xcode project using SPM, add it to your `Package.swift`:
 ```
 dependencies: [
-    .package(url: "https://github.com/openpay-innovations/sdk-ios.git", .upToNextMinor(from: "0.1.0"))
+    .package(url: "https://github.com/openpay-innovations/sdk-ios.git", .upToNextMinor(from: "0.2.0"))
 ]
 ```
 
@@ -143,23 +153,23 @@ The transaction token and the base handover URL are generated via the `/orders` 
 
 ### Swift - UIKit
 ```
-    final class CheckoutViewController: UIViewController {
-        private func presentCheckoutWebView(transactionToken: String, handoverURL: URL) {
-            Openpay.presentWebCheckoutView(
-                over: self,
-                transactionToken: transactionToken,
-                handoverURL: handoverURL,
-                completion: { result in
-                    switch result {
-                    case .success(.webLodged(let planId, _)):
-                        // Handle the successful result
-                    case .failure(let failure):
-                        // Handle the failure result
-                    }
-                }
-            )
-        }
-    }
+  final class CheckoutViewController: UIViewController {
+      private func presentCheckoutWebView(transactionToken: String, handoverURL: URL) {
+          Openpay.presentWebCheckoutView(
+              over: self,
+              transactionToken: transactionToken,
+              handoverURL: handoverURL,
+              completion: { result in
+                  switch result {
+                  case .success(.webLodged(let planId, _)):
+                      // Handle the successful result
+                  case .failure(let failure):
+                      // Handle the failure result
+                  }
+              }
+          )
+      }
+  }
 ```
 
 ### Objective-C
@@ -199,44 +209,85 @@ The transaction token and the base handover URL are generated via the `/orders` 
 
 ### SwiftUI
 ```
-    struct MainView: View {
-        @State private var checkoutItem = CheckoutItem(transactionToken: "", handoverURL: "")
-        var body: View {
-          SomeCheckoutView()
-          .openpayWebCheckoutView(checkoutItem: $checkoutItem) { result in
-              // Handle the checkout result
-          }
+  struct MainView: View {
+      @State private var checkoutItem = CheckoutItem(transactionToken: "", handoverURL: "")
+      var body: View {
+        SomeCheckoutView()
+        .openpayWebCheckoutView(checkoutItem: $checkoutItem) { result in
+            // Handle the checkout result
         }
-    }
+      }
+  }
+```
+
+## Openpay Branding
+The Openpay SDK provides two Openpay brandings, `openpay` and `opy`, which affect the SDK style for UI elements such as payment buttons and badges.
+
+---
+**NOTE**
+
+An **AU** or **UK** merchant should set the SDK branding to `openpay`.
+
+A **US** merchant should set the SDK branding to `opy`.
+
+---
+
+### Example
+```
+  // Set the SDK branding to be `openpay`. 
+  Openpay.setBranding(.openpay)
 ```
 
 ## Openpay Payment Button
-The Openpay SDK provides several payment buttons you can use to allow people to make payments with Openpay. The button styles below are available in the SDK.
-
-For more details about the payment button see [SDK Styleguide](Support/Images/styleguide.pdf).
-
-### Amber with Granite Grey
-
-| Granite on Amber | Amber on Granite |
-| ---------------- | ---------------- |
-| ![Payment Button Granite On Amber](Support/Images/payment_button_graniteOnAmber.svg) | ![Payment Button Amber On Granite](Support/Images/payment_button_amberOnGranite.svg) |
-
-### Granite Grey with White
-
-| Granite on White | White on Granite |
-| ---------------- | ---------------- |
-| ![Payment Button Granite On White](Support/Images/payment_button_graniteOnWhite.svg) | ![Payment Button White On Granite](Support/Images/payment_button_whiteOnGranite.svg) |
-
-Maintain the minimum button size around the button in iOS. Use the following values for guidance.
-| Minimum Width | Maximum Width | Minimum Height |
-| ------------- | ------------- | -------------- |
-| 218pt         | 380pt         |      48pt      |
+The Openpay SDK provides several payment buttons you can use to allow people to make payments with Openpay.
 
 You get the following advantages by using the Openpay payment button:
 - Support for configuring the button’s corner radius to match the style of your UI
 - Support for accessibility label that lets VoiceOver describe the button
 - Support for light and dark modes
 - Adjust the corner radius to match the appearance of other buttons in your app
+
+The button styles below are available in the SDK.
+
+### `openpay` Branding
+For more details about the payment button see the [Openpay SDK Styleguide](Support/Images/Openpay/styleguide_openpay.pdf).
+
+#### Amber with Granite Grey
+
+| Granite on Amber | Amber on Granite |
+| ---------------- | ---------------- |
+| ![Payment Button Granite On Amber](Support/Images/Openpay/payment_button_graniteOnAmber.svg) | ![Payment Button Amber On Granite](Support/Images/Openpay/payment_button_amberOnGranite.svg) |
+
+#### Granite Grey with White
+
+| Granite on White | White on Granite |
+| ---------------- | ---------------- |
+| ![Payment Button Granite On White](Support/Images/Openpay/payment_button_graniteOnWhite.svg) | ![Payment Button White On Granite](Support/Images/Openpay/payment_button_whiteOnGranite.svg) |
+
+Maintain the minimum button size around the button in iOS. Use the following values for guidance.
+| Minimum Width | Maximum Width | Minimum Height |
+| ------------- | ------------- | -------------- |
+| 218pt         | 380pt         |      44pt      |
+
+### `opy` Branding
+For more details about the payment button see the [OPY SDK Styleguide](Support/Images/OPY/styleguide_opy.pdf).
+
+#### Amber with Granite Grey
+
+| Granite on Amber | Amber on Granite |
+| ---------------- | ---------------- |
+| ![Payment Button Granite On Amber](Support/Images/OPY/payment_button_graniteOnAmber.svg) | ![Payment Button Amber On Granite](Support/Images/OPY/payment_button_amberOnGranite.svg) |
+
+#### Granite Grey with **White**
+
+| Granite on White | White on Granite |
+| ---------------- | ---------------- |
+| ![Payment Button Granite On White](Support/Images/OPY/payment_button_graniteOnWhite.svg) | ![Payment Button White On Granite](Support/Images/OPY/payment_button_whiteOnGranite.svg) |
+
+Maintain the minimum button size around the button in iOS. Use the following values for guidance.
+| Minimum Width | Maximum Width | Minimum Height |
+| ------------- | ------------- | -------------- |
+| 218pt         | 380pt         |      44pt      |
 
 ### Example
 ```
@@ -246,32 +297,50 @@ let checkoutButton = OpenpayPaymentButton(theme: .dynamic(light: .graniteOnAmber
 ```
 
 ## Openpay Badge
-The Openpay SDK provides four different color schemes for the badge view. The following button styles are available in the SDK.
+The Openpay SDK provides four different color schemes for the badge.
 
-For more details about the badge see [SDK Styleguide](Support/Images/styleguide.pdf).
+You get the following advantages by using the Openpay badge:
+- The badge can be scaled to to match the style of your UI
+- Support for accessibility label that lets VoiceOver describe the badge
+- Support for light and dark modes
 
-### Amber with Granite Grey
+The following button styles are available in the SDK.
+
+### `openpay` Branding
+For more details about the badge see the [Openpay SDK Styleguide](Support/Images/Openpay/styleguide_openpay.pdf).
+
+#### Amber with Granite Grey
 | Granite on Amber | Amber on Granite | Minimum Width |
 | --- | ----------- | ----------- |
-| ![Payment Button Granite On Amber](Support/Images/badge_graniteOnAmber.svg) | ![Payment Button Amber On Granite](Support/Images/badge_amberOnGranite.svg) | 75pt          |
+| ![Payment Button Granite On Amber](Support/Images/Openpay/badge_graniteOnAmber.svg) | ![Payment Button Amber On Granite](Support/Images/Openpay/badge_amberOnGranite.svg) | 75pt          |
 
-### Light
+#### Light
 The badge is just the Openpay logo and the background is transparent.
 
 | White | Granite | Minimum Width |
 | --- | ----------- | ----------- |
-| ![Payment Button Granite](Support/Images/badge_granite.svg) | ![Payment Button White](Support/Images/badge_white.svg) | 80pt          |
+| ![Payment Button Granite](Support/Images/Openpay/badge_granite.svg) | ![Payment Button White](Support/Images/Openpay/badge_white.svg) | 80pt          |
 
-You get the following advantages by using the Openpay badge:
-- The badge view can be scaled to to match the style of your UI
-- Support for accessibility label that lets VoiceOver describe the badge
-- Support for light and dark modes
+### `opy` Branding
+For more details about the badge see the [OPY SDK Styleguide](Support/Images/OPY/styleguide_opy.pdf).
+
+#### Amber with Granite Grey
+| Granite on Amber | Amber on Granite | Minimum Width |
+| --- | ----------- | ----------- |
+| ![Payment Button Granite On Amber](Support/Images/OPY/badge_graniteOnAmber.svg) | ![Payment Button Amber On Granite](Support/Images/OPY/badge_amberOnGranite.svg) | 40pt          |
+
+#### Light
+The badge is just the Openpay logo and the background is transparent.
+
+| White | Granite | Minimum Width |
+| --- | ----------- | ----------- |
+| ![Payment Button Granite](Support/Images/OPY/badge_granite.svg) | ![Payment Button White](Support/Images/OPY/badge_white.svg) | 34pt          |
 
 ### Example
 ```
-// Initialize an Openpay badge using graniteOnAmber color scheme in light mode and amberOnGranite color scheme in dark mode.
-// The OpenpayBadge is a subclass of UIView
-let openpayBadge = OpenpayBadge(theme: .dynamic(light: .graniteOnAmber, dark: .amberOnGranite))
+  // Initialize an Openpay badge using graniteOnAmber color scheme in light mode and amberOnGranite color scheme in dark mode.
+  // The OpenpayBadge is a subclass of UIView
+  let openpayBadge = OpenpayBadge(theme: .dynamic(light: .graniteOnAmber, dark: .amberOnGranite))
 ```
 
 ## Themes

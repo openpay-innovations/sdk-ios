@@ -12,9 +12,9 @@ import Foundation
 @frozen
 public enum OpenpayBranding {
     // An AU or UK merchant should set the SDK branding to `openpay`
-    // For more details about the `openpay` branding style see: /Support/Images/styleguide_openpay.pdf
+    // For more details about the `openpay` branding style see: /Support/Images/Openpay/styleguide_openpay.pdf
     case openpay
     // A US merchant should set the SDK branding to `opy`
-    // For more details about the `opy` branding style see: /Support/Images/styleguide_opy.pdf
+    // For more details about the `opy` branding style see: /Support/Images/OPY/styleguide_opy.pdf
     case opy
 }
