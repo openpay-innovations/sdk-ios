@@ -221,7 +221,7 @@ The transaction token and the base handover URL are generated via the `/orders` 
 ```
 
 ## Openpay Branding
-The Openpay SDK provides two Openpay branding, `openpay` and `opy`, which affects the SDK style for UI elements such as payment buttons and badges.
+The Openpay SDK provides two Openpay brandings, `openpay` and `opy`, which affect the SDK style for UI elements such as payment buttons and badges.
 
 ---
 **NOTE**
@@ -239,7 +239,7 @@ A **US** merchant should set the SDK branding to `opy`.
 ```
 
 ## Openpay Payment Button
-The Openpay SDK provides several payment buttons you can use to allow people to make payments with Openpay. The button styles below are available in the SDK.
+The Openpay SDK provides several payment buttons you can use to allow people to make payments with Openpay.
 
 You get the following advantages by using the Openpay payment button:
 - Support for configuring the button’s corner radius to match the style of your UI
@@ -247,8 +247,10 @@ You get the following advantages by using the Openpay payment button:
 - Support for light and dark modes
 - Adjust the corner radius to match the appearance of other buttons in your app
 
+The button styles below are available in the SDK.
+
 ### `openpay` Branding
-For more details about the payment button see [Openpay SDK Styleguide](Support/Images/Openpay/styleguide_openpay.pdf).
+For more details about the payment button see the [Openpay SDK Styleguide](Support/Images/Openpay/styleguide_openpay.pdf).
 
 #### Amber with Granite Grey
 
@@ -268,7 +270,7 @@ Maintain the minimum button size around the button in iOS. Use the following val
 | 218pt         | 380pt         |      44pt      |
 
 ### `opy` Branding
-For more details about the payment button see [OPY SDK Styleguide](Support/Images/OPY/styleguide_opy.pdf).
+For more details about the payment button see the [OPY SDK Styleguide](Support/Images/OPY/styleguide_opy.pdf).
 
 #### Amber with Granite Grey
 
@@ -295,15 +297,17 @@ let checkoutButton = OpenpayPaymentButton(theme: .dynamic(light: .graniteOnAmber
 ```
 
 ## Openpay Badge
-The Openpay SDK provides four different color schemes for the badge view. The following button styles are available in the SDK.
+The Openpay SDK provides four different color schemes for the badge.
 
 You get the following advantages by using the Openpay badge:
-- The badge view can be scaled to to match the style of your UI
+- The badge can be scaled to to match the style of your UI
 - Support for accessibility label that lets VoiceOver describe the badge
 - Support for light and dark modes
 
+The following button styles are available in the SDK.
+
 ### `openpay` Branding
-For more details about the badge see [Openpay SDK Styleguide](Support/Images/Openpay/styleguide_openpay.pdf).
+For more details about the badge see the [Openpay SDK Styleguide](Support/Images/Openpay/styleguide_openpay.pdf).
 
 #### Amber with Granite Grey
 | Granite on Amber | Amber on Granite | Minimum Width |
@@ -318,7 +322,7 @@ The badge is just the Openpay logo and the background is transparent.
 | ![Payment Button Granite](Support/Images/Openpay/badge_granite.svg) | ![Payment Button White](Support/Images/Openpay/badge_white.svg) | 80pt          |
 
 ### `opy` Branding
-For more details about the badge see [OPY SDK Styleguide](Support/Images/OPY/styleguide_opy.pdf).
+For more details about the badge see the [OPY SDK Styleguide](Support/Images/OPY/styleguide_opy.pdf).
 
 #### Amber with Granite Grey
 | Granite on Amber | Amber on Granite | Minimum Width |
