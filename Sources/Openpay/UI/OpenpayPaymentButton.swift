@@ -29,7 +29,7 @@ public final class OpenpayPaymentButton: UIButton {
 
     private let minimumWidth: CGFloat = 218
     private let maximumWidth: CGFloat = 380
-    private let minimumHeight: CGFloat = 48
+    private let minimumHeight: CGFloat = 44
 
     private var buttonImage: (logo: UIImage, backgroundImage: UIImage) {
         let logoColor: UIColor

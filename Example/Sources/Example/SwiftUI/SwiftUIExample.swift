@@ -49,7 +49,7 @@ private struct SwiftUICheckoutView: View {
                     action: checkout,
                     colorTheme: .dynamic(light: .graniteOnAmber, dark: .amberOnGranite)
                 )
-                .frame(width: 218, height: 48)
+                .frame(width: 218, height: 44)
                 .alert(item: $alert) { item -> Alert in
                     Alert(title: Text(item.title), message: Text(item.subtitle))
                 }
