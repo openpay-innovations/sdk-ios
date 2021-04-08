@@ -96,16 +96,18 @@ final class SummaryView: UIView {
 
         backgroundColor = .systemBackground
 
+        amountLabel.setContentCompressionResistancePriority(.required, for: .horizontal)
+
         let stackView = UIStackView(arrangedSubviews: [openpayBadge, amountLabel])
         stackView.axis = .horizontal
-        stackView.alignment = .center
-        stackView.distribution = .equalCentering
+        stackView.spacing = 8.0
         stackView.translatesAutoresizingMaskIntoConstraints = false
-
         addSubview(stackView)
 
+        let badgeWidth: CGFloat = Openpay.branding == .opy ? 40 : 84
+
         NSLayoutConstraint.activate([
-            openpayBadge.widthAnchor.constraint(equalToConstant: 84),
+            openpayBadge.widthAnchor.constraint(equalToConstant: badgeWidth),
             stackView.centerXAnchor.constraint(equalTo: centerXAnchor),
             stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
             stackView.leadingAnchor.constraint(greaterThanOrEqualTo: leadingAnchor, constant: 8),

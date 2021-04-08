@@ -32,16 +32,26 @@ public final class OpenpayBadge: UIView {
     private var aspectRatioConstraint: NSLayoutConstraint!
 
     private var badgeImage: BadgeImage {
-        switch colorScheme {
-        case .graniteOnAmber:
-            return BadgeImage(image: UIImage.opImage("badge_graniteOnAmber"), minimumWidth: 75)
-        case .amberOnGranite:
-            return BadgeImage(image: UIImage.opImage("badge_amberOnGranite"), minimumWidth: 75)
-        case .white:
-            let image = UIImage.opImage("badge_logo").withTintColor(.white)
+        switch (colorScheme, branding) {
+        case (.graniteOnAmber, .opy):
+            return BadgeImage(image: .opImage("badge_opy_graniteOnAmber"), minimumWidth: 40)
+        case (.graniteOnAmber, .openpay):
+            return BadgeImage(image: .opImage("badge_openpay_graniteOnAmber"), minimumWidth: 75)
+        case (.amberOnGranite, .opy):
+            return BadgeImage(image: .opImage("badge_opy_amberOnGranite"), minimumWidth: 40)
+        case (.amberOnGranite, .openpay):
+            return BadgeImage(image: .opImage("badge_openpay_amberOnGranite"), minimumWidth: 75)
+        case (.white, .opy):
+            let image = UIImage.opImage("badge_opy_logo").withTintColor(.white)
+            return BadgeImage(image: image, minimumWidth: 34)
+        case (.white, .openpay):
+            let image = UIImage.opImage("badge_openpay_logo").withTintColor(.white)
             return BadgeImage(image: image, minimumWidth: 80)
-        case .granite:
-            let image = UIImage.opImage("badge_logo").withTintColor(.graniteGrey)
+        case (.granite, .opy):
+            let image = UIImage.opImage("badge_opy_logo").withTintColor(.graniteGrey)
+            return BadgeImage(image: image, minimumWidth: 34)
+        case (.granite, .openpay):
+            let image = UIImage.opImage("badge_openpay_logo").withTintColor(.graniteGrey)
             return BadgeImage(image: image, minimumWidth: 80)
         }
     }
@@ -90,6 +100,8 @@ public final class OpenpayBadge: UIView {
         ])
 
         configAccessibility()
+
+        Openpay.addObserver(self)
     }
 
     override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -109,5 +121,13 @@ public final class OpenpayBadge: UIView {
         accessibilityTraits = [.image]
         isAccessibilityElement = true
         accessibilityLabel = Strings.badgeAccessibilityLabel
+    }
+}
+
+extension OpenpayBadge: OpenpayConfigObserver {
+    public func brandingDidChange(_ previousBranding: OpenpayBranding) {
+        DispatchQueue.main.async {
+            self.updateBadgeView(self.badgeImage)
+        }
     }
 }

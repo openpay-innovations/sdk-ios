@@ -18,10 +18,18 @@ public final class OpenpayPaymentButton: UIButton {
         case graniteOnWhite
     }
 
-    private let logoImage = UIImage.opImage("payment_button_logo")
+    private var logoImage: UIImage {
+        switch branding {
+        case .openpay:
+            return UIImage.opImage("payWithOpenpay_logo")
+        case .opy:
+            return UIImage.opImage("payWithOPY_logo")
+        }
+    }
+
     private let minimumWidth: CGFloat = 218
     private let maximumWidth: CGFloat = 380
-    private let minimumHeight: CGFloat = 48
+    private let minimumHeight: CGFloat = 44
 
     private var buttonImage: (logo: UIImage, backgroundImage: UIImage) {
         let logoColor: UIColor
@@ -89,6 +97,8 @@ public final class OpenpayPaymentButton: UIButton {
         accessibilityLabel = Strings.paymentButtonAccessibilityLabel
 
         updateButtonImage()
+
+        Openpay.addObserver(self)
     }
 
     override public func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -99,5 +109,13 @@ public final class OpenpayPaymentButton: UIButton {
     private func updateButtonImage() {
         setBackgroundImage(buttonImage.backgroundImage, for: .normal)
         setImage(buttonImage.logo, for: .normal)
+    }
+}
+
+extension OpenpayPaymentButton: OpenpayConfigObserver {
+    public func brandingDidChange(_ previousBranding: OpenpayBranding) {
+        DispatchQueue.main.async {
+            self.updateButtonImage()
+        }
     }
 }
