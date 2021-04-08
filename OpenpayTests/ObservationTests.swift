@@ -30,7 +30,7 @@ class ObservationTests: XCTestCase {
         observer = Observer()
     }
 
-    func test_brandingDidChange() throws {
+    func test_brandingDidChange() {
         XCTAssertNil(observer.previousBranding)
         Openpay.setBranding(.openpay)
         Openpay.setBranding(.opy)
