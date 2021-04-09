@@ -26,6 +26,7 @@ The Openpay SDK for iOS allows you to integrate Openpay with ease. It provides a
     - [Mint](#mint)
 - [Features](#features)
   - [Web Checkout View](#web-checkout-view)
+    - [Demo](#demo)
     - [Swift - UIKit](#swift---uikit)
     - [Objective-C](#objective-c)
     - [SwiftUI](#swiftui)
@@ -150,7 +151,7 @@ The web checkout view can be modally presented, passing the URL-encoded transact
 The transaction token and the base handover URL are generated via the `/orders` endpoint on the Openpay backend. Note that the transaction token returned from the Openpay backend is already URL-encoded so you do not need to encode it again.
 
 ### Demo
-![sample](https://user-images.githubusercontent.com/14011195/114128266-569c3800-993f-11eb-9e85-fdd2e36fc52c.gif)
+![sample](Support/Images/sample.gif)
 
 ### Swift - UIKit
 ```
