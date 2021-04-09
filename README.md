@@ -147,9 +147,10 @@ You do not need to install Mint manually as an extra step because a pre-compiled
 ## Web Checkout View
 The web checkout view can be modally presented, passing the URL-encoded transaction token and the base handover URL. When the web checkout flow is completed, the web view will be dismissed and return the checkout result.
 
-Check our demo: [Web Checkout Sample Video](https://user-images.githubusercontent.com/14011195/113249958-5c749680-930b-11eb-9085-7eb9f831e54b.mp4)
-
 The transaction token and the base handover URL are generated via the `/orders` endpoint on the Openpay backend. Note that the transaction token returned from the Openpay backend is already URL-encoded so you do not need to encode it again.
+
+### Demo
+![sample](https://user-images.githubusercontent.com/14011195/114128266-569c3800-993f-11eb-9e85-fdd2e36fc52c.gif)
 
 ### Swift - UIKit
 ```
